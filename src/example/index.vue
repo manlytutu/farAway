@@ -4,11 +4,28 @@
         <img class="logo" src="../assets/lolita-logo.jpeg"/>
         <br/>
         <p class="words">{{ msg }}</p>
-        <template v-for="item in routers.vicky">
-            <p :key="item.text" class="eachItem">
-                 <router-link :to="{ path: item.path}">{{item.text}}</router-link>
-            </p>
-        </template>
+        <div class="block">
+            <!--<vicky-collapse :title="groupOne.title" :groupDatas="groupOne" @clickTitle="groupOneClickTitleEvent" @clickItem="groupOneClickItemEvent">
+            </vicky-collapse>-->
+             <vicky-collapse :title="groupOne.title" :groupDatas="groupOne">
+                <template v-for="item in groupOne.itemsRealDatas">
+                    <vicky-collapse-item :key="item.contentIndex">
+                        <router-link :to="{path: item.content}">{{item.content}}</router-link>
+                    </vicky-collapse-item>
+                </template>
+            </vicky-collapse>
+        </div>
+        <div class="block">
+            <!--<vicky-collapse :title="groupTwo.title" :groupDatas="groupTwo" @clickTitle="groupTwoClickTitleEvent" @clickItem="groupTwoClickItemEvent">
+            </vicky-collapse>-->
+            <vicky-collapse :title="groupTwo.title" :groupDatas="groupTwo">
+                <template v-for="item in groupTwo.itemsRealDatas">
+                    <vicky-collapse-item :key="item.contentIndex" >
+                        <router-link :to="{path: item.content}">{{item.content}}</router-link>
+                    </vicky-collapse-item>
+                </template>
+            </vicky-collapse>
+        </div>
     </div>
   </div>
 </template>
@@ -17,62 +34,92 @@ export default {
   name: 'UIExample',
   data () {
     return {
-      routers: {
+      groupOne: {
         // 基础组件
-        vicky: [
+        title: '基础组件',
+        showItems: false,
+        itemsRealDatas: [
           {
-            text: 'vickyButton - 按钮',
-            path: 'vickyButton'
+            contentIndex: 'vickyCollapse - 折叠面板',
+            content: 'vickyCollapse'
           },
           {
-            text: 'vickyCascader - 级联选择器',
-            path: 'vickyCascader'
+            contentIndex: 'vickyTabs - 标签导航',
+            content: 'vickyTabs'
           },
           {
-            text: 'vickyCollapse - 折叠面板',
-            path: 'vickyCollapse'
+            contentIndex: 'vickySlider - 滑块',
+            content: 'vickySlider'
           },
           {
-            text: 'vickyTabs - 标签导航',
-            path: 'vickyTabs'
+            contentIndex: 'vickyProgress - 进度条',
+            content: 'vickyProgress'
           },
           {
-            text: 'vickySlider - 滑块',
-            path: 'vickySlider'
+            contentIndex: 'vickyIcon - 字体图标',
+            content: 'vickyIcon'
           },
           {
-            text: 'vickyProgress - 进度条',
-            path: 'vickyProgress'
+            contentIndex: 'vickyLoading - 加载提示',
+            content: 'vickyLoading'
           },
           {
-            text: 'vickyUpload - 文件上传',
-            path: 'vickyUpload'
+            contentIndex: 'vickyHeader - 头部',
+            content: 'vickyHeader'
           },
           {
-            text: 'vickyIcon - 字体图标',
-            path: 'vickyIcon'
+            contentIndex: 'vickyDialog - 对话框',
+            content: 'vickyDialog'
+          }]
+      },
+      groupTwo: {
+        // 基础组件
+        title: '表单组件',
+        showItems: false,
+        itemsRealDatas: [
+          {
+            contentIndex: 'vickyButton - 按钮',
+            content: 'vickyButton'
           },
           {
-            text: 'vickyLoading - 加载提示',
-            path: 'vickyLoading'
+            contentIndex: 'vickyCascader - 级联选择器',
+            content: 'vickyCascader'
           },
           {
-            text: 'vickyHeader - 头部',
-            path: 'vickyHeader'
+            contentIndex: 'vickyUpload - 文件上传',
+            content: 'vickyUpload'
           },
           {
-            text: 'vickyDialog - 对话框',
-            path: 'vickyDialog'
-          },
-          {
-            text: 'vickySelector - 选择框',
-            path: 'vickySelector'
+            contentIndex: 'vickySelector - 选择框',
+            content: 'vickySelector'
           }]
       },
       msg: 'Lolita 移动端 Vue 组件库'
     }
   },
   mounted () {
+  },
+  methods: {
+    // groupOneClickTitleEvent () {
+    //   console.log('click title')
+    // },
+    // groupOneClickItemEvent (e) {
+    //   this.groupOne.itemsRealDatas.forEach(function (item, index) {
+    //     if (item.content === e.target.innerHTML) {
+    //       this.$router.push({path: '/' + item.content})
+    //     }
+    //   }, this)
+    // },
+    // groupTwoClickTitleEvent () {
+    //   console.log('click title')
+    // },
+    // groupTwoClickItemEvent (e) {
+    //   this.groupTwo.itemsRealDatas.forEach(function (item, index) {
+    //     if (item.content === e.target.innerHTML) {
+    //       this.$router.push({path: '/' + item.content})
+    //     }
+    //   }, this)
+    // }
   }
 }
 </script>
@@ -105,6 +152,9 @@ export default {
       line-height:50px;
       font-size:16px;
       border-bottom:1px solid #ccc;
+  }
+  .block{
+      margin-bottom 10px
   }
 }
 </style>
