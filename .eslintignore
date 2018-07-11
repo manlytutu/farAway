@@ -3,4 +3,5 @@
 /dist/
 /*.js
 /test/unit/coverage/
+/test/unit/specs/
 /src/assets/

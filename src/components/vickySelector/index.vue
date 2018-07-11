@@ -4,7 +4,7 @@
             <div class="mask" v-if="selectorDatas.showMask"></div>
          </transition>
         <transition name="fade">
-            <div class="vicky-selector-group" v-show="selectorDatas.showSelector">
+            <div class="vicky-selector-group" v-if="selectorDatas.showSelector">
                 <div class="selector-header">
                     <vicky-header :fixed="false" @cancleBtn="cancelBtnEvent(false)"  @confirmBtn="confirmBtnEvent(true)">
                         <span slot="leftPart">取消</span>
@@ -20,8 +20,14 @@
     </div>
 </template>
 <script>
+import vickyHeader from '../vickyHeader/index'
+import vickySelectorItem from './item'
 export default{
   name: 'vicky-selector',
+  components: {
+    'vicky-header': vickyHeader,
+    'vicky-selector-item': vickySelectorItem
+  },
   props: {
     selectorDatasLists: {
       type: Object,
