@@ -22,14 +22,16 @@ const createLintingRule = () => ({
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src/main.js'
+    app: process.env.NODE_ENV === 'production'?'./src/index.js':'./src/main.js'
   },
   output: {
     path: config.build.assetsRoot,
-    filename: '[name].js',
+    filename: 'index.js',
     publicPath: process.env.NODE_ENV === 'production'
       ? config.build.assetsPublicPath
-      : config.dev.assetsPublicPath
+      : config.dev.assetsPublicPath,
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
