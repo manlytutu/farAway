@@ -37,6 +37,7 @@
 <script>
 
 export default {
+  name: 'vicky-progress',
   props: {
     type: {
       type: String,

@@ -14,6 +14,7 @@
 </template>
 <script>
 export default{
+  name: 'vicky-loading',
   props: {
     text: {
       type: String

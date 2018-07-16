@@ -23,6 +23,7 @@
 <script>
 
 export default {
+  name: 'vicky-slider',
   props: {
     messageIsShow: {
       type: Boolean,

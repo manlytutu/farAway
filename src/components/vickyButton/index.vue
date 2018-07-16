@@ -40,6 +40,7 @@
 <script>
 
 export default {
+  name:'vicky-button'
   props: {
     tag: {
       type: String,

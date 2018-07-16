@@ -24,6 +24,7 @@
 <script>
 
 export default {
+  name: 'vicky-upload',
   props: {
     value: {
       // 绑定默认的value prop

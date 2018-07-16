@@ -30,6 +30,7 @@
 
 <script>
 export default {
+  name: 'vicky-tabs-panel',
   props: {
     title: String,
     active: {
