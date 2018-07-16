@@ -1,10 +1,10 @@
 {
   "name": "faraway",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Vue.js project",
   "author": "vickyZhaoLu <zl@example.com>",
   "private": false,
-  "main":"dist/vicky-ui.js",
+  "main": "dist/vicky-ui.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
