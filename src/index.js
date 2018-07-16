@@ -39,7 +39,7 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 
-export default {
+module.exports = {
   install,
   VickyButton,
   VickyCascader,
@@ -55,3 +55,4 @@ export default {
   VickyUpload
   // ...如果还有的话继续添加
 }
+module.exports.default = module.exports
