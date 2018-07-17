@@ -22,16 +22,16 @@ const createLintingRule = () => ({
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: process.env.NODE_ENV === 'production'?'./src/index.js':'./src/main.js'
+    app: './src/main.js'
   },
   output: {
     path: config.build.assetsRoot,
-    filename: 'index.js',
+    filename: '[name].js',
     publicPath: process.env.NODE_ENV === 'production'
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath,
-    libraryTarget: 'umd',
-    umdNamedDefine: true
+    libraryTarget: 'umd',//输出格式
+    umdNamedDefine: true // 是否将模块名称作为 AMD 输出的命名空间
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],

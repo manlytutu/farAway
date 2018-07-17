@@ -36,7 +36,7 @@
 <script>
 
 export default {
-  name:'vicky-cascader',
+  name: 'vicky-cascader',
   props: {
     itemsShow: {
       type: Boolean,
