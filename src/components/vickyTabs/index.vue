@@ -22,7 +22,6 @@
 </style>
 
 <script>
-
 export default {
   name: 'vicky-tabs',
   props: {

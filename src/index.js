@@ -1,6 +1,7 @@
 import VickyButton from '@/components/vickyButton/index.js'
 import VickyCascader from '@/components/vickyCascader/index.js'
 import VickyCollapse from '@/components/vickyCollapse/index.js'
+import VickyCollapseItem from '@/components/vickyCollapse/vickyCollapseItem/index.js'
 import VickyDialog from '@/components/vickyDialog/index.js'
 import VickyHeader from '@/components/vickyHeader/index.js'
 import VickyIcon from '@/components/vickyIcon/index.js'
@@ -9,6 +10,7 @@ import VickyProgress from '@/components/vickyProgress/index.js'
 import VickySelector from '@/components/vickySelector/index.js'
 import VickySlider from '@/components/vickySlider/index.js'
 import VickyTabs from '@/components/vickyTabs/index.js'
+import VickyTabsPanel from '@/components/vickyTabs/vickyTabPanel/index.js'
 import VickyUpload from '@/components/vickyUpload/index.js'
 // ...如果还有的话继续添加
 
@@ -16,6 +18,7 @@ var components = [
   VickyButton,
   VickyCascader,
   VickyCollapse,
+  VickyCollapseItem,
   VickyDialog,
   VickyHeader,
   VickyIcon,
@@ -24,6 +27,7 @@ var components = [
   VickySelector,
   VickySlider,
   VickyTabs,
+  VickyTabsPanel,
   VickyUpload
   // ...如果还有的话继续添加
 ]
@@ -44,6 +48,7 @@ export default {
   VickyButton,
   VickyCascader,
   VickyCollapse,
+  VickyCollapseItem,
   VickyDialog,
   VickyHeader,
   VickyIcon,
@@ -52,6 +57,7 @@ export default {
   VickySelector,
   VickySlider,
   VickyTabs,
+  VickyTabsPanel,
   VickyUpload
   // ...如果还有的话继续添加
 }
